@@ -11,8 +11,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<CajaTrujilloDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("CajaTrujilloConnection")));
 builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
 builder.Services.AddScoped<ISeguroRepository, SeguroRepository>();
+builder.Services.AddScoped<IPagosRepository, PagosRepository>();
 builder.Services.AddScoped<IAfiliacionRepository, AfiliacionRepository>();
 builder.Services.AddScoped<IAfiliacionService, AfiliacionService>();
+builder.Services.AddScoped<IPagosService, PagosService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
